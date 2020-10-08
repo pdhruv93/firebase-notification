@@ -1,1 +1,43 @@
-Dhruv Pandey
+<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
+
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyAojM5xILvGUjp-RWYHV-sdNAGnr2Lgjn4",
+    authDomain: "portal-initiations.firebaseapp.com",
+    databaseURL: "https://portal-initiations.firebaseio.com",
+    projectId: "portal-initiations",
+    storageBucket: "portal-initiations.appspot.com",
+    messagingSenderId: "218153097513",
+    appId: "1:218153097513:web:9a6160162eab56229bbf38"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  const messaging=firebase.messaging();
+  
+  
+  function IntitalizeFireBaseMessaging() {
+        messaging
+            .requestPermission()
+            .then(function () {
+                console.log("Notification Permission");
+                return messaging.getToken();
+            })
+            .then(function (token) {
+                console.log("Token : "+token);
+                document.getElementById("token").innerHTML=token;
+            })
+            .catch(function (reason) {
+                console.log(reason);
+            });
+    }
+
+    IntitalizeFireBaseMessaging();
+  
+</script>
+
+
+
+<body>
+Firebase Notification
+</body>
