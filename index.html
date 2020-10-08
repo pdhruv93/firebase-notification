@@ -25,6 +25,7 @@ var firebaseConfig = {
             })
             .then(function (token) {
                 console.log("Token : "+token);
+                document.getElementById("token").innerHTML=token;
             })
             .catch(function (reason) {
                 console.log(reason);
@@ -36,7 +37,7 @@ var firebaseConfig = {
 </script>
 
 
-
+<p id="token"></p>
 <body>
 Firebase Notification
 </body>
