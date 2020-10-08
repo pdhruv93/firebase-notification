@@ -14,7 +14,8 @@ var firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
   const messaging=firebase.messaging();
-  
+    
+    alert(firebase.messaging.isSupported());
   
   function IntitalizeFireBaseMessaging() {
         messaging
